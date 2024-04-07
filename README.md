@@ -32,10 +32,44 @@ Trong Domain Driven Design (DDD), mỗi tầng có một mục tiêu và chịu 
 4. Tầng **Presentation (Presentation Layer)**:
   - Trong dự án, không có thư mục cụ thể nào tương ứng với tầng Presentation. Tuy nhiên, trong một ứng dụng thực tế, các thành phần như controller thường được xem xét là phần của tầng Presentation.
 
+## Nhiệm vụ của các folder:
+1. Thư mục controllers/
+  - Trong mỗi thư mục domain, có một thư mục controllers/ chứa các tệp controller.
+  - Các controller là nơi xử lý các yêu cầu HTTP từ client và gọi các dịch vụ (services) tương ứng để thực hiện các hành động.
+2. Thư mục models/:
+  - Thư mục models/ trong mỗi domain chứa các tệp định nghĩa model đại diện cho các đối tượng trong domain.
+  - Models định nghĩa cấu trúc dữ liệu và các phương thức liên quan đến các thực thể trong domain.
+3. Thư mục repositories/:
+  - Thư mục repositories/ trong mỗi domain chứa các tệp định nghĩa các repository để tương tác với cơ sở dữ liệu.
+  - Các repository thực hiện các truy vấn và thao tác cơ sở dữ liệu liên quan đến domain.
+4. Thư mục services/:
+  - Thư mục services/ trong mỗi domain chứa các tệp định nghĩa các dịch vụ (services) thực hiện logic kinh doanh phức tạp.
+  - Các services gọi các phương thức từ các repository để truy vấn và cập nhật dữ liệu, thực hiện logic kinh doanh, và gửi kết quả cho controllers.
+5. Thư mục config/, middleware/, và utils/:
+  - Các thư mục này chứa các tệp cấu hình, middleware, và các hàm tiện ích được sử dụng trong toàn bộ dự án.
+6. Tệp app.js:
+  - Tệp chính khởi tạo ứng dụng Express.js và kết nối các module, middleware, và các cấu hình cần thiết khác.
+
+## Mục đích sử dụng DDD:
+1. Tạo ra mô hình phản ánh chính xác lĩnh vực kinh doanh: DDD khuyến khích việc tạo ra các mô hình phản ánh đúng các khái niệm và quy trình trong lĩnh vực kinh doanh của ứng dụng. Điều này giúp làm rõ và tổ chức dữ liệu, logic và quy trình làm việc trong mã nguồn.
+2. Phân chia ứng dụng thành các miền nhỏ hơn (Domains): DDD khuyến khích việc phân chia ứng dụng thành các miền nhỏ hơn, mỗi miền có một mô hình riêng và có thể được phát triển độc lập. Điều này giúp giảm thiểu sự phức tạp và tăng tính tái sử dụng của mã nguồn và **không quá phụ thuộc vào công nghệ hay ngôn ngữ**.
+3. Tập trung vào việc giải quyết vấn đề: DDD tập trung vào việc hiểu và giải quyết các vấn đề cụ thể trong lĩnh vực kinh doanh thay vì chỉ tập trung vào việc triển khai các tính năng. Điều này giúp làm rõ và phân loại các yêu cầu và giải pháp trong mã nguồn.
+4. Hợp tác chặt chẽ giữa lập trình viên và chuyên gia lĩnh vực: DDD khuyến khích sự hợp tác chặt chẽ giữa lập trình viên và chuyên gia lĩnh vực để đảm bảo rằng mã nguồn phản ánh đúng các yêu cầu và quy trình trong lĩnh vực kinh doanh.
+5. Tích hợp kiến thức lập trình và kiến thức lĩnh vực: DDD tạo ra một giao diện chung giữa lập trình viên và chuyên gia lĩnh vực, giúp kết hợp kiến thức về lập trình và kiến thức về lĩnh vực để xây dựng các giải pháp hiệu quả và phản ánh chính xác yêu cầu của doanh nghiệp.
+
+**Tóm gọn ý:**
+Việc sử dụng Domain-Driven Design giúp tạo ra các ứng dụng phần mềm có khả năng linh hoạt, dễ bảo trì và phản ánh chính xác các yêu cầu và quy trình trong lĩnh vực kinh doanh, từ đó giúp tăng tính hiệu quả và giảm thiểu rủi ro trong quá trình phát triển.
+
+## Khởi chạy dự án:
+### Cài đặt các gói package:
+    mpn i
+
+### Khởi chạy test
+    npm start
 
 
-
-
+## Luồng chạy
+Khi 1 API được gọi, **app** &rarr; **(route) controller** &rarr; **service** &rarr; **repository** (import model để xử lý thao tác với database)
 
 
 
