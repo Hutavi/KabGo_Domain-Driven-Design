@@ -23,4 +23,4 @@ Trong Domain Driven Design (DDD), mỗi tầng có một mục tiêu và chịu 
 1. Tầng **Application (Application Layer)**:
   - Thư mục _**controller/**_ trong _**src/modules/driver/**_ có thể được coi là phần của tầng _**Application**_. Nó chứa các logic điều phối và tổ chức các hoạt động của ứng dụng, như xử lý yêu cầu từ client và gọi các dịch vụ (services) tương ứng.
 2. Tầng **Domain (Domain Layer)**:
-  - Các thư mục **model/**_ _, **repository/**_ _ và **service/**_ _ trong **src/modules/driver/**_ _ đại diện cho tầng **Domain**__. Các thư mục này chứa toàn bộ logic kinh doanh của ứng dụng liên quan đến domain của driver, bao gồm định nghĩa dữ liệu, truy cập cơ sở dữ liệu, xử lý logic kinh doanh, và xác thực dữ liệu.
+  - Các thư mục _**model/**_, _**repository/**_ và _**service/**_ trong _**src/modules/driver/**_ đại diện cho tầng _**Domain**_. Các thư mục này chứa toàn bộ logic kinh doanh của ứng dụng liên quan đến domain của driver, bao gồm định nghĩa dữ liệu, truy cập cơ sở dữ liệu, xử lý logic kinh doanh, và xác thực dữ liệu.
